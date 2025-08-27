@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@import "tailwindcss";
+
 @keyframes marquee {
   0% {
     transform: translateX(0);
@@ -13,4 +15,19 @@
   display: flex;
   animation: marquee 25s linear infinite;
   width: max-content;
+}
+
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Enhanced hover effects */
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Additional utility classes */
+.pause-animation {
+  animation-play-state: paused !important;
 }

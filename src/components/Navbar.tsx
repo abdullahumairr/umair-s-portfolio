@@ -32,21 +32,26 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center py-4">
-          <div className="text-xl font-bold text-white">Umair's</div>
+          <div className="flex-shrink-0">
+            <button
+              onClick={() => scrollToSection("home")}
+              className="text-2xl font-bold bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent cursor-pointer"
+            >
+              AU
+            </button>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-8">
-            {["Home", "About", "Projects", "Technologies", "Contact"].map(
-              (item) => (
-                <button
-                  key={item}
-                  onClick={() => scrollToSection(item.toLowerCase())}
-                  className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-                >
-                  {item}
-                </button>
-              )
-            )}
+            {["Home", "About", "Projects", "Technologies"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item.toLowerCase())}
+                className="text-slate-300 hover:text-white transition-colors duration-200 font-medium"
+              >
+                {item}
+              </button>
+            ))}
           </div>
 
           {/* Mobile Menu Button */}

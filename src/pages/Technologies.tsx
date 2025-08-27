@@ -24,7 +24,10 @@ const techLogos = [
 
 export default function Technologies() {
   return (
-    <section className="bg-gradient-to-bl from-slate-800 via-slate-700 to-slate-900">
+    <section
+      id="technologies"
+      className="bg-gradient-to-bl from-slate-800 via-slate-700 to-slate-900"
+    >
       <div className="container mx-auto flex flex-col gap-8 pb-16">
         <h2 className="text-3xl sm:text-4xl text-center font-bold bg-gradient-to-r from-slate-300 to-slate-500 bg-clip-text text-transparent mb-8">
           Technologies
@@ -32,13 +35,13 @@ export default function Technologies() {
 
         {/* marquee container */}
         <div className="overflow-hidden relative">
-          <div className="flex gap-24 animate-marquee">
+          <div className="flex gap-20 animate-marquee">
             {techLogos.map((logo, index) => (
               <div key={index} className="flex gap-4 items-center">
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-12 w-auto grayscale hover:grayscale-0 transition"
+                  className="h-16 w-auto grayscale hover:grayscale-0 transition"
                 />
                 <span className="mt-2 text-xl text-white font-semibold text-center">
                   {logo.name}
@@ -54,7 +57,7 @@ export default function Technologies() {
                 <img
                   src={logo.src}
                   alt={logo.name}
-                  className="h-12 w-auto grayscale hover:grayscale-0 transition"
+                  className="h-16 w-auto grayscale hover:grayscale-0 transition"
                 />
                 <span className="mt-2 text-xl text-white font-semibold text-center">
                   {logo.name}

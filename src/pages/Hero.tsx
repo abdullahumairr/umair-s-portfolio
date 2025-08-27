@@ -1,13 +1,22 @@
 import { Github, Linkedin, Mail, Download } from "lucide-react";
 
 const Hero = () => {
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+
   return (
     <section
       id="home"
       className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-700 to-slate-800 flex items-center justify-center relative overflow-hidden"
     >
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-36 lg:pt-0">
         <div className="space-y-8">
           {/* Profile Image */}
           <div className="relative mx-auto w-32 h-32 mb-8">
@@ -38,7 +47,10 @@ const Hero = () => {
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <button className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+            <button
+              onClick={() => scrollToSection("projects")}
+              className="bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl cursor-pointer"
+            >
               View My Work
             </button>
             <button className="flex items-center gap-2 border-2 border-slate-400 text-slate-300 hover:text-white hover:border-slate-200 px-8 py-3 rounded-full font-semibold transition-all duration-300">
