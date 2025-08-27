@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Download } from "lucide-react";
+import { Github, Linkedin, Mail, Download, Instagram } from "lucide-react";
 
 const Hero = () => {
   const scrollToSection = (sectionId: string) => {
@@ -36,8 +36,8 @@ const Hero = () => {
               </span>
             </h1>
             <p className="text-xl sm:text-2xl text-gray-300 mb-6 max-w-3xl mx-auto">
-              Full-Stack Developer & UI/UX Designer passionate about creating
-              exceptional digital experiences
+              Front-End developer passionate about creating exceptional digital
+              experiences
             </p>
             <p className="text-lg text-gray-400 mb-8 max-w-2xl mx-auto">
               I craft modern web applications with cutting-edge technologies and
@@ -62,9 +62,18 @@ const Hero = () => {
           {/* Social Links */}
           <div className="flex justify-center space-x-6 mt-8">
             {[
-              { Icon: Github, href: "#", label: "GitHub" },
-              { Icon: Linkedin, href: "#", label: "LinkedIn" },
-              { Icon: Mail, href: "#", label: "Email" },
+              {
+                Icon: Github,
+                href: "https://github.com/abdullahumairr/",
+                label: "GitHub",
+              },
+              {
+                Icon: Linkedin,
+                href: "https://www.linkedin.com/in/abdullah-umair/",
+                label: "LinkedIn",
+              },
+              { Icon: Mail, href: "abdulumair320@gmail.com", label: "Email" },
+              { Icon: Instagram, href: "abdulumair320@gmail.com", label: "Email" },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}

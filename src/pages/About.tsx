@@ -67,13 +67,12 @@ const About = () => {
             </p>
             <div className="flex flex-wrap gap-2 pt-4">
               {[
+                "Javascript",
                 "React",
                 "TypeScript",
                 "Node.js",
                 "Next.js",
                 "Tailwind CSS",
-                "MongoDB",
-                "PostgreSQL",
               ].map((tech) => (
                 <span
                   key={tech}

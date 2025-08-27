@@ -1,19 +1,19 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
+import kodenSch from "../assets/projects/koden-sch.png";
 
 const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-Commerce Platform",
+      title: "School Profile",
       description:
-        "A full-stack e-commerce solution built with React, Node.js, and MongoDB. Features include user authentication, payment integration, and admin dashboard.",
-      image:
-        "https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe"],
+        "A School Profile Web that create for Sekolah Developer Indonesia with modern design and update feature.",
+      image: kodenSch,
+      technologies: ["React", "TypeScript", "NextJs", "Tailwind CSS", "Vercel"],
       githubUrl: "#",
-      liveUrl: "#",
-      category: "Full Stack",
+      liveUrl: "https://www.kodein.sch.id/",
+      category: "Frontend",
     },
     {
       id: 2,
@@ -77,7 +77,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "Frontend", "Backend", "Full Stack"];
+  const categories = ["All", "Frontend", "Multimedia"];
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredProjects =
@@ -125,17 +125,26 @@ const Projects = () => {
               key={project.id}
               className="group bg-[#45556C] rounded-xl shadow-sm border border-slate-300 overflow-hidden hover:shadow-xl hover:border-slate-400 transition-all duration-300"
             >
-              {/* Project Image */}
+              {/* Project Image - Now clickable */}
               <div className="relative overflow-hidden">
-                <img
-                  src={project.image}
-                  alt={project.title}
-                  className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block cursor-pointer"
+                >
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </a>
                 <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
                     aria-label="View on GitHub"
                   >
@@ -143,6 +152,8 @@ const Projects = () => {
                   </a>
                   <a
                     href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
                     aria-label="View Live Demo"
                   >
@@ -159,9 +170,17 @@ const Projects = () => {
                   </span>
                 </div>
 
-                <h3 className="text-xl font-semibold text-gray-300 mb-2 group-hover:text-slate-700 transition-colors duration-200">
-                  {project.title}
-                </h3>
+                {/* Title - Now clickable */}
+                <a
+                  href={project.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block cursor-pointer"
+                >
+                  <h3 className="text-xl font-semibold text-gray-300 mb-2 hover:text-slate-200 transition-colors duration-200">
+                    {project.title}
+                  </h3>
+                </a>
 
                 <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
                   {project.description}
@@ -183,6 +202,8 @@ const Projects = () => {
                 <div className="flex gap-3">
                   <a
                     href={project.githubUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-sm font-medium transition-colors duration-200"
                   >
                     <Github size={16} />
@@ -190,6 +211,8 @@ const Projects = () => {
                   </a>
                   <a
                     href={project.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg text-sm font-medium transition-all duration-200"
                   >
                     <ExternalLink size={16} />

@@ -67,17 +67,15 @@ const Navbar = () => {
         {isOpen && (
           <div className="md:hidden bg-slate-800/95 backdrop-blur-sm border-t border-slate-700">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {["Home", "About", "Projects", "Technologies", "Contact"].map(
-                (item) => (
-                  <button
-                    key={item}
-                    onClick={() => scrollToSection(item.toLowerCase())}
-                    className="block w-full text-left px-3 py-2 text-slate-300 hover:text-white transition-colors duration-200 font-medium"
-                  >
-                    {item}
-                  </button>
-                )
-              )}
+              {["Home", "About", "Projects", "Technologies"].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className="block w-full text-left px-3 py-2 text-slate-300 hover:text-white transition-colors duration-200 font-medium"
+                >
+                  {item}
+                </button>
+              ))}
             </div>
           </div>
         )}
