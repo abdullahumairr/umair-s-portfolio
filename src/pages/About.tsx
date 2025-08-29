@@ -39,9 +39,9 @@ const About = () => {
             About Me
           </h2>
           <p className="text-lg text-gray-400 max-w-3xl mx-auto">
-            I'm a passionate full-stack developer with 5+ years of experience in
-            creating exceptional digital experiences. I love turning ideas into
-            reality through code.
+            I'm a Front-End developer with 2+ years of experience in creating
+            exceptional digital experiences. I love turning ideas into reality
+            through code.
           </p>
         </div>
 
@@ -52,11 +52,10 @@ const About = () => {
               My Journey
             </h3>
             <p className="text-gray-400 leading-relaxed">
-              I started my journey in web development over 5 years ago, and I've
-              been fascinated by the endless possibilities of creating digital
-              solutions. My expertise spans across modern web technologies, from
-              crafting pixel-perfect user interfaces to building robust backend
-              systems.
+              I started my journey in web development over 2 years ago, and I
+              start to learn about coding when i was in high school. My
+              expertise covers modern web technologies, ranging from designing
+              precise user interfaces that users enjoy viewing.
             </p>
             <p className="text-gray-400 leading-relaxed">
               I believe in writing clean, maintainable code and creating user

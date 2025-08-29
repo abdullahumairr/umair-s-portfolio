@@ -3,6 +3,8 @@ import { Github, ExternalLink, Code } from "lucide-react";
 import kodenSch from "../assets/projects/koden-sch.png";
 import notesaApp from "../assets/projects/notes.png";
 import weatherApp from "../assets/projects/weather-app.png";
+import dashboardAdmin from "../assets/projects/dahsboard-admin.png";
+import montainBlog from "../assets/projects/montain-blog.png";
 
 const Projects = () => {
   const projects = [
@@ -12,7 +14,7 @@ const Projects = () => {
       description:
         "A School Profile Web that create for Sekolah Developer Indonesia with modern design and update feature.",
       image: kodenSch,
-      technologies: ["React", "TypeScript", "NextJs", "Tailwind CSS", "Vercel"],
+      technologies: ["React", "TypeScript", "NextJs", "Tailwind CSS", "Vite"],
       githubUrl: "#",
       liveUrl: "https://www.kodein.sch.id/",
       category: "Frontend",
@@ -23,7 +25,7 @@ const Projects = () => {
       description:
         "A Todo list website that making it easier for users to manage schedules.",
       image: notesaApp,
-      technologies: ["React", "Javascript", "Tailwind CSS"],
+      technologies: ["React", "Javascript", "Vite", "Tailwind CSS"],
       githubUrl: "#",
       liveUrl: "https://notes-app-kappa-snowy.vercel.app/",
       category: "Frontend",
@@ -34,22 +36,21 @@ const Projects = () => {
       description:
         "A responsive weather dashboard that provides real-time weather data, forecasts, and interactive maps with beautiful data visualizations.",
       image: weatherApp,
-      technologies: ["React", "Tailwind CSS", "Openweathermap API"],
+      technologies: ["React", "Tailwind CSS", "Vite", "Openweathermap API"],
       githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: "https://weather-app-umair.vercel.app/",
       category: "Frontend",
     },
     {
       id: 4,
-      title: "Social Media API",
+      title: "Dashboard Admin",
       description:
-        "A RESTful API for a social media platform with user authentication, post management, real-time messaging, and file uploads.",
-      image:
-        "https://images.pexels.com/photos/1181673/pexels-photo-1181673.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
+        "A web with Front-End authentication system and display for administrators and users",
+      image: dashboardAdmin,
+      technologies: ["React", "Tailwind CSS", "Vite", "Lucide"],
       githubUrl: "#",
-      liveUrl: "#",
-      category: "",
+      liveUrl: "https://dashboard-web-sooty.vercel.app/",
+      category: "Frontend",
     },
     {
       id: 5,
@@ -65,15 +66,14 @@ const Projects = () => {
     },
     {
       id: 6,
-      title: "AI Content Generator",
+      title: "Blog Website",
       description:
-        "An AI-powered content generation tool that helps create blog posts, social media content, and marketing copy using OpenAI API.",
-      image:
-        "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["Next.js", "OpenAI API", "Prisma", "PostgreSQL"],
+        "A Blog Website That create with React VITE and Tailwind CSS. Contains interesting news about mountains..",
+      image: montainBlog,
+      technologies: ["React", "Javascript", "Tailwind CSS"],
       githubUrl: "#",
-      liveUrl: "#",
-      category: "Full Stack",
+      liveUrl: "https://mountain-blog-beta.vercel.app/",
+      category: "FrontEnd",
     },
   ];
 
@@ -123,10 +123,12 @@ const Projects = () => {
           <div className=" flex flex-col gap-10 py-5">
             <span className="flex gap-3 sm:pl-0 pl-5 text-3xl sm:text-4xl font-semibold items-center text-gray-300">
               {activeCategory !== "All" ? activeCategory : ""} Projects{" "}
-              <Code size={48} strokeWidth={3} className="pt-2"/>  
+              <Code size={48} strokeWidth={3} className="pt-2" />
             </span>
-            <span className=" text-xl sm:text-2xl  font-medium text-gray-400 ">I haven't created any backend{" "}
-            {activeCategory !== "All" ? activeCategory : ""} projects yet.</span>
+            <span className=" text-xl sm:text-2xl  font-medium text-gray-400 ">
+              I haven't created any backend{" "}
+              {activeCategory !== "All" ? activeCategory : ""} projects yet.
+            </span>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
