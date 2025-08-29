@@ -1,6 +1,7 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import kodenSch from "../assets/projects/koden-sch.png";
+import notesaApp from "../assets/projects/notes.png"
 
 const Projects = () => {
   const projects = [
@@ -17,14 +18,13 @@ const Projects = () => {
     },
     {
       id: 2,
-      title: "Task Management App",
+      title: "notesApp",
       description:
-        "A collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      image:
-        "https://images.pexels.com/photos/3184292/pexels-photo-3184292.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
+        "A Todo list website that making it easier for users to manage schedules.",
+      image: notesaApp,
+      technologies: ["React", "Javascript", "Tailwind CSS"],
       githubUrl: "#",
-      liveUrl: "#",
+      liveUrl: "https://notes-app-kappa-snowy.vercel.app/",
       category: "Frontend",
     },
     {
