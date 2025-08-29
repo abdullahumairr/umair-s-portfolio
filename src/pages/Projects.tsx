@@ -1,7 +1,8 @@
 import React from "react";
 import { Github, ExternalLink } from "lucide-react";
 import kodenSch from "../assets/projects/koden-sch.png";
-import notesaApp from "../assets/projects/notes.png"
+import notesaApp from "../assets/projects/notes.png";
+import weatherApp from "../assets/projects/weather-app.png";
 
 const Projects = () => {
   const projects = [
@@ -32,9 +33,8 @@ const Projects = () => {
       title: "Weather Dashboard",
       description:
         "A responsive weather dashboard that provides real-time weather data, forecasts, and interactive maps with beautiful data visualizations.",
-      image:
-        "https://images.pexels.com/photos/1118873/pexels-photo-1118873.jpeg?auto=compress&cs=tinysrgb&w=800",
-      technologies: ["React", "Chart.js", "OpenWeather API", "CSS3"],
+      image: weatherApp,
+      technologies: ["React", "Tailwind CSS", "Openweathermap API",],
       githubUrl: "#",
       liveUrl: "#",
       category: "Frontend",
@@ -49,7 +49,7 @@ const Projects = () => {
       technologies: ["Node.js", "Express", "PostgreSQL", "JWT"],
       githubUrl: "#",
       liveUrl: "#",
-      category: "Backend",
+      category: "",
     },
     {
       id: 5,
@@ -77,7 +77,7 @@ const Projects = () => {
     },
   ];
 
-  const categories = ["All", "Frontend", "Multimedia"];
+  const categories = ["All", "Frontend", "Backend", "Multimedia"];
   const [activeCategory, setActiveCategory] = React.useState("All");
 
   const filteredProjects =
