@@ -1,5 +1,5 @@
 import React from "react";
-import { Github, ExternalLink } from "lucide-react";
+import { Github, ExternalLink, Code } from "lucide-react";
 import kodenSch from "../assets/projects/koden-sch.png";
 import notesaApp from "../assets/projects/notes.png";
 import weatherApp from "../assets/projects/weather-app.png";
@@ -34,7 +34,7 @@ const Projects = () => {
       description:
         "A responsive weather dashboard that provides real-time weather data, forecasts, and interactive maps with beautiful data visualizations.",
       image: weatherApp,
-      technologies: ["React", "Tailwind CSS", "Openweathermap API",],
+      technologies: ["React", "Tailwind CSS", "Openweathermap API"],
       githubUrl: "#",
       liveUrl: "#",
       category: "Frontend",
@@ -119,110 +119,121 @@ const Projects = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              className="group bg-[#45556C] rounded-xl shadow-sm border border-slate-300 overflow-hidden hover:shadow-xl hover:border-slate-400 transition-all duration-300"
-            >
-              {/* Project Image - Now clickable */}
-              <div className="relative overflow-hidden">
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block cursor-pointer"
-                >
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </a>
-                <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
-                    aria-label="View on GitHub"
-                  >
-                    <Github size={16} className="text-slate-700" />
-                  </a>
+        {filteredProjects.length === 0 ? (
+          <div className=" flex flex-col gap-10 py-5">
+            <span className="flex gap-3 sm:pl-0 pl-5 text-3xl sm:text-4xl font-semibold items-center text-gray-300">
+              {activeCategory !== "All" ? activeCategory : ""} Projects{" "}
+              <Code size={48} strokeWidth={3} className="pt-2"/>  
+            </span>
+            <span className=" text-xl sm:text-2xl  font-medium text-gray-400 ">I haven't created any backend{" "}
+            {activeCategory !== "All" ? activeCategory : ""} projects yet.</span>
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {filteredProjects.map((project) => (
+              <div
+                key={project.id}
+                className="group bg-[#45556C] rounded-xl shadow-sm border border-slate-300 overflow-hidden hover:shadow-xl hover:border-slate-400 transition-all duration-300"
+              >
+                {/* Project Image - Now clickable */}
+                <div className="relative overflow-hidden">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
-                    aria-label="View Live Demo"
+                    className="block cursor-pointer"
                   >
-                    <ExternalLink size={16} className="text-slate-700" />
+                    <img
+                      src={project.image}
+                      alt={project.title}
+                      className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   </a>
-                </div>
-              </div>
-
-              {/* Project Content */}
-              <div className="p-6">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="px-3 py-1 bg-slate-200 text-slate-800 text-xs font-semibold rounded-full">
-                    {project.category}
-                  </span>
-                </div>
-
-                {/* Title - Now clickable */}
-                <a
-                  href={project.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block cursor-pointer"
-                >
-                  <h3 className="text-xl font-semibold text-gray-300 mb-2 hover:text-slate-200 transition-colors duration-200">
-                    {project.title}
-                  </h3>
-                </a>
-
-                <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
-                  {project.description}
-                </p>
-
-                {/* Technologies */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.technologies.map((tech) => (
-                    <span
-                      key={tech}
-                      className="px-2 py-1 bg-slate-200 text-slate-700 text-xs rounded-md font-medium"
+                  <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
+                      aria-label="View on GitHub"
                     >
-                      {tech}
-                    </span>
-                  ))}
+                      <Github size={16} className="text-slate-700" />
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="p-2 bg-white/90 rounded-full hover:bg-white transition-colors duration-200"
+                      aria-label="View Live Demo"
+                    >
+                      <ExternalLink size={16} className="text-slate-700" />
+                    </a>
+                  </div>
                 </div>
 
-                {/* Action Buttons */}
-                <div className="flex gap-3">
-                  <a
-                    href={project.githubUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-sm font-medium transition-colors duration-200"
-                  >
-                    <Github size={16} />
-                    Code
-                  </a>
+                {/* Project Content */}
+                <div className="p-6">
+                  <div className="flex items-center justify-between mb-3">
+                    <span className="px-3 py-1 bg-slate-200 text-slate-800 text-xs font-semibold rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
+
+                  {/* Title - Now clickable */}
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg text-sm font-medium transition-all duration-200"
+                    className="block cursor-pointer"
                   >
-                    <ExternalLink size={16} />
-                    Live Demo
+                    <h3 className="text-xl font-semibold text-gray-300 mb-2 hover:text-slate-200 transition-colors duration-200">
+                      {project.title}
+                    </h3>
                   </a>
+
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-3 leading-relaxed">
+                    {project.description}
+                  </p>
+
+                  {/* Technologies */}
+                  <div className="flex flex-wrap gap-2 mb-4">
+                    {project.technologies.map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-1 bg-slate-200 text-slate-700 text-xs rounded-md font-medium"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                  </div>
+
+                  {/* Action Buttons */}
+                  <div className="flex gap-3">
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 text-slate-800 rounded-lg text-sm font-medium transition-colors duration-200"
+                    >
+                      <Github size={16} />
+                      Code
+                    </a>
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-slate-600 to-slate-700 hover:from-slate-700 hover:to-slate-800 text-white rounded-lg text-sm font-medium transition-all duration-200"
+                    >
+                      <ExternalLink size={16} />
+                      Live Demo
+                    </a>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
