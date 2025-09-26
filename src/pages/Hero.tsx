@@ -18,11 +18,23 @@ const Hero = () => {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10 pt-36 lg:pt-0">
         <div className="space-y-8">
-          {/* Profile Image */}
+          {/* Profile Image with Orbit Animation */}
           <div className="relative mx-auto w-32 h-32 mb-8">
-            <div className="w-full h-full rounded-full bg-gradient-to-r from-slate-400 to-slate-600 p-1">
-              <div className="w-full h-full rounded-full bg-slate-700 flex items-center justify-center">
-                <span className="text-4xl font-bold text-white">AU</span>
+            <div className="relative w-full h-full">
+              {/* Orbiting element */}
+              <div
+                className="absolute inset-0 rounded-full"
+                style={{
+                  animation: "orbit 3s linear infinite",
+                }}
+              >
+                <div className="w-4 h-3 bg-slate-400 rounded-full absolute -top-1 left-1/2 transform -translate-x-1/2"></div>
+              </div>
+              {/* Main logo */}
+              <div className="w-full h-full rounded-full bg-gradient-to-r from-slate-400 to-slate-600 p-1">
+                <div className="w-full h-full rounded-full bg-slate-700 flex items-center justify-center">
+                  <span className="text-4xl font-bold text-white">AU</span>
+                </div>
               </div>
             </div>
           </div>
@@ -73,7 +85,11 @@ const Hero = () => {
                 label: "LinkedIn",
               },
               { Icon: Mail, href: "abdulumair320@gmail.com", label: "Email" },
-              { Icon: Instagram, href: "abdulumair320@gmail.com", label: "Email" },
+              {
+                Icon: Instagram,
+                href: "https://www.instagram.com/abdlumrr/",
+                label: "Instagram",
+              },
             ].map(({ Icon, href, label }) => (
               <a
                 key={label}
